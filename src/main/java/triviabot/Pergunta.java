@@ -1,5 +1,6 @@
 package triviabot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pergunta {
@@ -19,9 +20,16 @@ public class Pergunta {
 
     //Retorna string com alternativas separadas por linha
     public String stringAlternativas() {
+    	ArrayList<String> indices = new ArrayList<>();
+    	indices.add("A- ");
+    	indices.add("B- ");
+    	indices.add("C- ");
+    	indices.add("D- ");
+    	int i = 0;
         StringBuilder s = new StringBuilder();
         for (String alt : getAlternativas()) {
-            s.append(alt).append("\n");
+            s.append(indices.get(i)).append(alt).append("\n");
+            i++;
         }
         return s.toString();
     }
